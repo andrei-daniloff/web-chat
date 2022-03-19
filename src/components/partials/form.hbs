@@ -1,0 +1,20 @@
+<div class="form__wrapper">
+    {{#if title}}
+        <h1 class="form__title">{{title}}</h1>
+    {{/if}}
+    <form class="form">
+        {{#each inputs}}
+            <input class="form__input"
+                   placeholder="{{this.placeholder}}"
+                   name="{{this.name}}"
+                   type="{{this.type}}"
+                   required="{{this.required}}"
+            />
+            {{#each errors}}
+                <span class="form__error">{{this}}</span>
+            {{/each}}
+        {{/each}}
+        <a class="form__submit" href="{{mainLink}}">{{submitBtn.text}}</a>
+    </form>
+    <a class="form__additional" href="{{additionalLink}}">{{additionalBtn.text}}</a>
+</div>

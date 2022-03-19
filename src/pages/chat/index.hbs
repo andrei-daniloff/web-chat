@@ -1,0 +1,25 @@
+---
+styles:
+    - ./chat.less
+    - ../../components/styles/index.less
+---
+{{#extend "base"}}
+    {{#content "main"}}
+        <div class="chat">
+            <div class="header">
+                {{> search}}
+                {{> chat-header}}
+            </div>
+            <div class="message__wrapper">
+                <div class="message-list">
+                    {{#each messages}}
+                        {{> message-preview this}}
+                    {{/each}}
+                </div>
+                <div class="message__enter">
+                    {{> message-enter-field}}
+                </div>
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

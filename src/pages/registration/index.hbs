@@ -1,0 +1,46 @@
+---
+title: Регистрация
+inputs:
+  - placeholder: Введите имя*
+    type: text
+    required: true
+    name: first_name
+  - placeholder: Введите фамилию*
+    type: text
+    required: true
+    name: second_name
+  - placeholder: Введите логин*
+    type: text
+    required: true
+    name: login
+  - placeholder: Введите почту*
+    type: email
+    required: true
+    name: email
+  - placeholder: Введите телефон*
+    type: phone
+    required: true
+    name: phone
+  - placeholder: Введите пароль*
+    type: password
+    required: true
+    name: password
+  - placeholder: Повторите пароль*
+    type: password
+    required: true
+    name: repeat_password
+submitBtn:
+    text: Зарегистрироваться
+additionalBtn:
+    text: Войти
+styles:
+  - ../../components/styles/form.less
+mainLink: "../../pages/login/index.hbs"
+additionalLink: "../../pages/login/index.hbs"
+---
+
+{{#extend "base"}}
+    {{#content "main"}}
+        {{> form}}
+    {{/content}}
+{{/extend}}

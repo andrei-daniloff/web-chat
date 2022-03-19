@@ -1,0 +1,51 @@
+@import "../../../src/assets/styles/mixins";
+@import "../../../src/assets/styles/fonts";
+@import "../../../src/assets/styles/colors";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__title {
+    .medium-font-size(24px);
+  }
+
+  &__error {
+    width: 100%;
+    color: @validation-error;
+  }
+
+  &__wrapper {
+    .center-position();
+
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    .default-font();
+
+    padding: 5px 0 5px 10px;
+    margin-top: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #9B9B9B;
+    width: 100%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__submit,
+  &__additional {
+    .default-button();
+    .default-font();
+
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,41 @@
+---
+inputs:
+  - label: Старый пароль
+    name: oldPassword
+  - label: Новый пароль
+    name: newPassword
+  - label: Повторите новый пароль
+    name: repeatNewPassword
+errors:
+  - Пароли не совпадают
+styles:
+  - ./change-password.less
+---
+
+{{#extend "base"}}
+    {{#content "main"}}
+        <div class="change-password">
+            <form class="form">
+                {{#each inputs}}
+                    <div class="inputs">
+                        <label for="{{this.name}}" class="inputs__name">
+                            {{this.label}}
+                        </label>
+                        <input class="inputs__input"
+                               type="password"
+                               id="{{this.name}}"
+                               name="{{this.name}}"
+                               placeholder="******"
+                               required
+                        />
+                    </div>
+                    {{#each errors}}
+                        <span class="form__error">{{this}}</span>
+                    {{/each}}
+                {{/each}}
+                <a class="form__action" href="../view-user-settings/index.hbs">Сохранить</a>
+                <a href="../view-user-settings/index.hbs" class="form__action">Отмена</a>
+            </form>
+        </div>
+    {{/content}}
+{{/extend}}

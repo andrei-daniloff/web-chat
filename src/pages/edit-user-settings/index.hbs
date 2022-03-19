@@ -1,0 +1,60 @@
+---
+inputs:
+  - label: Имя
+    value: Андрей
+    name: first_name
+  - label: Фамилия
+    value: Данилов
+    name: second_name
+  - label: Телефон
+    value: '89029084758'
+    name: phone
+  - label: Почта
+    value: adan0220@ya.ru
+    name: email
+  - label: Логин
+    value: Andy Anderson
+    name: display_name
+styles:
+  - ./edit-user-settings.less
+---
+
+{{#extend "base"}}
+    {{#content "main"}}
+        <div class="user-settings">
+            <div class="avatar">
+                <div class="avatar__wrapper">
+                    <img class="avatar__image"
+                         src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
+                         alt="user-image">
+                    <input title="" type="file" class="avatar__input" alt="avatar">
+                </div>
+                <span class="avatar__user-name">Андрей</span>
+            </div>
+            <form class="form">
+
+                {{#each inputs}}
+                    <div class="inputs">
+                        <label for="{{this.name}}" class="inputs__name">
+                            {{this.label}}
+                        </label>
+                        <input class="inputs__input"
+                               type="text"
+                               value="{{this.value}}"
+                               id="{{this.name}}"
+                               name="{{this.name}}"
+                               required
+                        />
+                    </div>
+                    {{#each errors}}
+                        <span class="form__error">{{this}}</span>
+                    {{/each}}
+                {{/each}}
+                <div class="actions">
+                    <a class="actions__save" href="../view-user-settings/index.hbs">Сохранить</a>
+                    <a class="actions__cancel" href="../view-user-settings/index.hbs">Отмена</a>
+                </div>
+            </form>
+        </div>
+    {{/content}}
+{{/extend}}

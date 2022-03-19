@@ -1,0 +1,25 @@
+---
+inputs:
+  - placeholder: "Введите логин*"
+    type: "text"
+    required: true
+    name: "login"
+  - placeholder: "Введите пароль*"
+    type: "password"
+    required: true
+    name: "password"
+submitBtn:
+  text: "Войти"
+additionalBtn:
+  text: "Регистрация"
+styles:
+  - ../../components/styles/form.less
+mainLink: "../../pages/chat/index.hbs"
+additionalLink: "../../pages/registration/index.hbs"
+---
+
+{{#extend "base"}}
+    {{#content "main"}}
+        {{> form}}
+    {{/content}}
+{{/extend}}

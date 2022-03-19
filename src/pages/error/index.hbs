@@ -1,0 +1,14 @@
+---
+code: 404
+description: Упс, не туда попали
+styles:
+    - ./error.less
+---
+{{#extend "base"}}
+    {{#content "main"}}
+        <div class="error">
+            <p class="error__code">{{code}}</p>
+            <p class="error__description">{{description}}</p>
+        </div>
+    {{/content}}
+{{/extend}}
